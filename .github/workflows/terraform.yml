@@ -30,6 +30,8 @@ jobs:
         workload_identity_provider: 'principalSet://iam.googleapis.com/projects/286895835019/locations/global/workloadIdentityPools/github-wif/attribute.repository/SreekarEajarla/wif'
         # service_account: 'github-wif@bilvantisaimlproject.iam.gserviceaccount.com'
 
+
+
     
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
