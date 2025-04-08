@@ -6,7 +6,7 @@ provider "google" {
 
 # Create a GCS bucket
 resource "google_storage_bucket" "example_bucket" {
-  name          = "nani234nithiny"  # Must be globally unique
+  name          = "nani234nithiny001"  # Must be globally unique
   location      = "US"                       # Multi-region or region
   storage_class = "STANDARD"                 # Storage class (STANDARD, NEARLINE, etc.)
 
