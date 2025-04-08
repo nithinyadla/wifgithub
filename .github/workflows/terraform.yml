@@ -27,8 +27,8 @@ jobs:
     - id: auth
       uses: google-github-actions/auth@v2.0.0  
       with:
-        workload_identity_provider: 'projects/286895835019/locations/global/workloadIdentityPools/githubwif/providers/githubwif'
-        service_account: 'github-wif@bilvantisaimlproject.iam.gserviceaccount.com'
+        workload_identity_provider: 'principalSet://iam.googleapis.com/projects/286895835019/locations/global/workloadIdentityPools/github-wif/attribute.repository/SreekarEajarla/wif'
+        # service_account: 'github-wif@bilvantisaimlproject.iam.gserviceaccount.com'
 
 
           
