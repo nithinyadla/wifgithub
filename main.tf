@@ -1,12 +1,7 @@
-# Configure the GCP provider
-provider "google" {
-  project = var.project_id
-  region  = var.region
-}
 
 # Create a GCS bucket
 resource "google_storage_bucket" "example_bucket" {
-  name          = var.bucket_name
+  
   location      = var.bucket_location
   storage_class = var.storage_class
 
