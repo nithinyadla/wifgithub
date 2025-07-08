@@ -1,31 +1,28 @@
 # Configure the GCP provider
 provider "google" {
-  project = "bilvantisaimlproject"   # Replace with your GCP project ID
-  region  = "us-central1"       # Default region
+  project = var.project_id
+  region  = var.region
 }
 
 # Create a GCS bucket
 resource "google_storage_bucket" "example_bucket" {
-  name          = "nani234nithiny001"  # Must be globally unique
-  location      = "US"                       # Multi-region or region
-  storage_class = "STANDARD"                 # Storage class (STANDARD, NEARLINE, etc.)
+  name          = var.bucket_name
+  location      = var.bucket_location
+  storage_class = var.storage_class
 
-  # Optional settings:
-  uniform_bucket_level_access = true        # Recommended for security
-  force_destroy               = false       # Prevent accidental deletion
+  uniform_bucket_level_access = var.enable_uniform_access
+  force_destroy               = var.force_destroy
 
-  # Optional: Add lifecycle rules
   lifecycle_rule {
     action {
       type = "Delete"
     }
     condition {
-      age = 30  # Delete objects after 30 days
+      age = var.lifecycle_age
     }
   }
 
-  # Optional: Versioning
   versioning {
-    enabled = true
+    enabled = var.enable_versioning
   }
 }
